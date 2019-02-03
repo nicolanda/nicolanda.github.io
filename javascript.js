@@ -18,12 +18,12 @@ var newdata1 = [50, 40, 30, 20, 15, 10, 5];
                         //backgroundColor: 'rgb(0, 99, 132)',
                         borderColor: 'rgb(0, 99, 132)',
                         data: olddata,
-            },{
+            }/*,{
                         label: "My Second dataset",
                         //backgroundColor: 'rgb(0, 200, 0)',
                         borderColor: 'rgb(0, 200, 0)',
                         data: olddata1,
-                    }
+                    }*/
                 ]
             },
 
@@ -104,7 +104,14 @@ var newdata1 = [50, 40, 30, 20, 15, 10, 5];
                 var sensoresData = [];
 
                 for (var i in sensores){
-                    sensoresLabels.push(Date(sensores[i].fecha).getHour());
+                    var date = new Date(sensores[i].fecha);
+                    if (date.getMinutes()<10) {
+                        sensoresLabels.push(date.getHours()+":0"+date.getMinutes()+":"+date.getSeconds());
+                    }
+                    else{
+                        sensoresLabels.push(date.getHours()+":"+date.getMinutes()+":"+date.getSeconds());
+                    }
+                    sensoresLabels.push(date.getHours()+":"+date.getMinutes()+":"+date.getSeconds());
                     sensoresData.push(sensores[i].distancia);
                 }
 
