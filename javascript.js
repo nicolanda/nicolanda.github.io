@@ -18,12 +18,12 @@ var newdata1 = [50, 40, 30, 20, 15, 10, 5];
                         //backgroundColor: 'rgb(0, 99, 132)',
                         borderColor: 'rgb(0, 99, 132)',
                         data: olddata,
-            },/*{
+            },{
                         label: "My Second dataset",
                         //backgroundColor: 'rgb(0, 200, 0)',
                         borderColor: 'rgb(0, 200, 0)',
                         data: olddata1,
-                    }*/
+                    }
                 ]
             },
 
@@ -81,7 +81,7 @@ var newdata1 = [50, 40, 30, 20, 15, 10, 5];
 
     function loadSensores (){
         var xhr = new XMLHttpRequest();
-        xhr.open('GET', 'http://localhost:8080/sensores', true);
+        xhr.open('GET', 'https://sensoresriostulua.herokuapp.com/sensores', true);
         xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
 
         xhr.onload = function(){
