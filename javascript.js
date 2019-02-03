@@ -104,7 +104,7 @@ var newdata1 = [50, 40, 30, 20, 15, 10, 5];
                 var sensoresData = [];
 
                 for (var i in sensores){
-                    sensoresLabels.push(Date(sensores[i].fecha));
+                    sensoresLabels.push(Date(sensores[i].fecha).getHour());
                     sensoresData.push(sensores[i].distancia);
                 }
 
